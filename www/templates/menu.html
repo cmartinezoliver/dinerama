@@ -1,0 +1,60 @@
+<ion-side-menus enable-menu-with-back-views="false" ng-controller="MenuCtrl">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <!-- CABECERA SI NO ESTA LOGUEADO -->
+
+    <ion-header-bar class="bar-stable headerGrande" menu-close ng-click="login()" ng-if="!logedIn">
+      <img src="../img/user-default.png" class="imagenCircularMenu"/>
+      <div class="usuarioAnonimoMenu">
+        Usuario anonimo
+      </div>
+    </ion-header-bar>
+
+    <!-- CABECERA SI ESTA LOGUEADO -->
+
+    <ion-header-bar class="bar-stable headerGrande" menu-close ng-click="goTo('app.usuarioActivo')" ng-if="logedIn">
+      <img src="../img/user-default.png" class="imagenCircularMenu"/>
+      <div class="usuarioMenu">
+        Usuario
+        <br>
+        Balance total: <span ng-class="{'balancePositivo': positivo, 'balanceNegativo': !positivo}">{{balanceTotal}} {{moneda}}</span>
+      </div>
+    </ion-header-bar>
+    
+    <!-- CONTENIDO MENU -->
+
+    <ion-content class="contentMenuGrande">
+      <ion-list>
+        <ion-item menu-close href="#/app/usuarios">
+          <i class="fa fa-user-circle-o iconoMenu"></i>
+          Usuarios
+        </ion-item>
+        <ion-item menu-close href="#/app/beneficios">
+          <i class="fa fa-hand-o-up iconoMenu"></i>
+          Beneficios
+        </ion-item>
+        <ion-item menu-close href="#/app/gastos">
+          <i class="fa fa-hand-o-down iconoMenu"></i>
+          Gastos
+        </ion-item>
+        <ion-item menu-close ng-click="logout()" ng-if="logedIn">
+          <i class="fa fa-sign-out iconoMenu"></i>
+          Salir
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
