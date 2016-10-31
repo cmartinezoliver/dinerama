@@ -1,9 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $rootScope, $ionicModal) {
+.controller('AppCtrl', function($scope, $rootScope, $ionicModal, $ionicPopup) {
 
-	// FUNCION CREA MODAL DE LOGIN
-	$rootScope.login = function() {
+	// CREAR MODAL DE LOGIN
+	$rootScope.createModalLogin = function() {
 
 		if ( typeof $rootScope.modalLogin == 'undefined' ) {
 
@@ -21,17 +21,37 @@ angular.module('starter.controllers', [])
 		}
 	}
 
-	// FUNCION ELIMINAR MODAL LOGIN
+	// ELIMINAR MODAL LOGIN
 	$rootScope.closeModalLogin = function() {
 
 		$rootScope.modalLogin.remove();
 		$rootScope.modalLogin = undefined;
 	}
+
+	// LOGUEO DE LA APP
+	$rootScope.login = function() {
+
+		$rootScope.logedIn = true;
+		$rootScope.closeModalLogin();
+	}
+
+	// DESLOGUEO DE LA APP
+	$rootScope.logout = function() {
+
+		setTimeout(function(){ // NECESARIO PARA QUE CIERRE EL MENU LATERAL CORRECTAMENTE
+
+			$rootScope.logedIn = false;
+			$ionicPopup.alert({
+		     	title: 'Correcto',
+		    	template: 'Has salido correctamente, ¡vuelve pronto!'
+		   	});
+		}, 300)
+	}
 })
 
 .controller('MenuCtrl', function($scope, $rootScope, $state) {
 
-	// FUNCION IR A UN ESTADO DE LA APP PASANDO EL NOMBRE DEL ESTADO POR PARAMENTRO
+	// IR A UN ESTADO DE LA APP PASANDO EL NOMBRE DEL ESTADO POR PARAMETRO
 	$rootScope.goTo = function(state) {
 
     	$state.go(state);
