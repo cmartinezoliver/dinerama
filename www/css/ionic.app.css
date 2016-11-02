@@ -9816,10 +9816,20 @@ a.button {
   transition-duration: 0s; }
 
 .headerGrande {
-  height: 98px; }
+  height: 97px;
+  background-color: white !important;
+  border-color: transparent !important;
+  background-image: none !important; }
 
 .contentMenuGrande {
   top: 97px; }
+
+.bar.bar-stable {
+  background-color: #AEC6CF; }
+
+.iconoDerecha {
+  font-size: 20px;
+  padding: 7px; }
 
 .imagenCircularMenu {
   height: 60px;
@@ -9829,11 +9839,15 @@ a.button {
   margin-left: 5px;
   margin-right: 10px; }
 
-.usuarioMenu {
+.platform-android .usuarioMenu {
   padding-top: 25px; }
 
-.usuarioAnonimoMenu {
-  padding-top: 35px; }
+.platform-ios .usuarioMenu {
+  padding-top: 15px; }
+
+.entrarMenu {
+  color: #AEC6CF;
+  font-weight: bold; }
 
 .balancePositivo {
   color: #aadd77;
@@ -9854,3 +9868,13 @@ a.button {
 .closeModalIcon {
   font-size: 23px !important;
   padding: 4px 4px 0 10px; }
+
+.botonOpcionBorrar {
+  background-color: #ef6464;
+  font-size: 23px;
+  color: #444; }
+
+.botonOpcionEditar {
+  background-color: #62bf7d;
+  font-size: 23px;
+  color: #444; }

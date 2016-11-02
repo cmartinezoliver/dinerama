@@ -17,16 +17,18 @@
     <!-- CABECERA SI NO ESTA LOGUEADO -->
 
     <ion-header-bar class="bar-stable headerGrande" menu-close ng-click="createModalLogin()" ng-if="!logedIn">
-      <img src="../img/user-default.png" class="imagenCircularMenu"/>
-      <div class="usuarioAnonimoMenu">
+      <img src="img/user-default.png" class="imagenCircularMenu"/>
+      <div class="usuarioMenu">
         Usuario anonimo
+        <br>
+        <span class="entrarMenu">Entrar</span>
       </div>
     </ion-header-bar>
 
     <!-- CABECERA SI ESTA LOGUEADO -->
 
     <ion-header-bar class="bar-stable headerGrande" menu-close ng-click="goTo('app.usuarioActivo')" ng-if="logedIn">
-      <img src="../img/user-default.png" class="imagenCircularMenu"/>
+      <img src="img/user-default.png" class="imagenCircularMenu"/>
       <div class="usuarioMenu">
         Usuario
         <br>

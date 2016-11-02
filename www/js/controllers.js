@@ -59,7 +59,18 @@ angular.module('starter.controllers', [])
 })
 
 .controller('UsuariosCtrl', function($scope) {
-  
+  	
+  	// AÑADIR NUEVO USUARIO
+  	$scope.addUser = function() {
+
+  		console.log('ADD USER');
+  		$scope.users.push({'name': 'Roberto', 'cash': 300})
+  	}
+
+  	// USUARIOS TEMP
+  	$scope.users = [];
+
+  	$scope.users.push({'name': 'Antonio', 'cash': 65})
 })
 
 .controller('BeneficiosCtrl', function($scope) {

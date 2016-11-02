@@ -1,5 +1,27 @@
 <ion-view view-title="Usuarios">
-  <ion-content>
-    
-  </ion-content>
+
+	<ion-nav-buttons side="right">
+    	<div class="iconoDerecha" ng-click="addUser()">
+    		<i class="fa fa-user-plus"></i>
+      	</div>
+    </ion-nav-buttons>
+
+	<ion-content>
+
+	    <ion-list>
+		    <ion-item class="item item-avatar" ng-repeat="user in users">
+		    	<img src="img/user-default.png" />
+		      	<h2>{{user.name}}</h2>
+		      	<p>{{user.cash}} {{moneda}}</p>
+		      	<ion-option-button class="ion-minus-circled botonOpcionBorrar">
+
+				</ion-option-button>
+				<ion-option-button class="ion-edit botonOpcionEditar">
+					
+			    </ion-option-button>
+		    </ion-item>
+		</ion-list>
+
+	</ion-content>
+
 </ion-view>
